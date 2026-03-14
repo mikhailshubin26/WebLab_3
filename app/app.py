@@ -1,5 +1,7 @@
 import random
 from urllib.parse import urlparse
+import os
+from dotenv import load_dotenv
 
 from flask import (
     Flask,
@@ -23,10 +25,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 
 fake = Faker()
+load_dotenv()
 
 app = Flask(__name__)
 application = app
-app.config["SECRET_KEY"] = "super-secret-key-change-this"
+app.config["SECRET_KEY"] = os.getenv("FLASK_KEY")
 
 login_manager = LoginManager()
 login_manager.init_app(app)

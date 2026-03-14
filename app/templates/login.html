@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <h1 class="my-4">Вход</h1>
+
+        <form method="post">
+            <div class="mb-3">
+                <label for="login" class="form-label">Логин</label>
+                <input type="text" class="form-control" id="login" name="login" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Пароль</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                <label class="form-check-label" for="remember">
+                    Запомнить меня
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Войти</button>
+        </form>
+
+        <div class="mt-4">
+            <p class="mb-1"><strong>Тестовый пользователь:</strong></p>
+            <p class="mb-0">Логин: <code>user</code></p>
+            <p>Пароль: <code>qwerty</code></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
